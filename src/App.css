@@ -28,9 +28,7 @@ body {
 
 
 input,
-textarea,
-label,
-button {
+textarea, {
   font-family: "Cocogoose 1", sans-serif;
 }
 
@@ -93,21 +91,21 @@ textarea:focus {
 }
 
 .form > label {
+  font-family: 'Montserrat', sans-serif;
   padding-bottom: 4px;
   color: white;
   font-weight: inherit;
   font-size: 22px;
-  letter-spacing: 2px;
 }
 
 .form > button {
-  font-family: "Cocogoose 2", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: rgb(53, 52, 54);
   padding: 20px;
   border: none;
   background-color: rgb(147, 213, 0);
-  font-weight: bolder;
-  font-size: 32px;
+  font-weight: 600;
+  font-size: 37px;
   border-radius: 11px;
   color: #fff;
   cursor: pointer;

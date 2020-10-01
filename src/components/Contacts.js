@@ -21,6 +21,7 @@ function Contacts() {
             gender: gender,
             contact: contact,
             email: email,
+            language: language,
             // message: message
         })
         .then(() => {
