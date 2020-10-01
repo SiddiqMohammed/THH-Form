@@ -4,8 +4,11 @@ import { db } from '../firebase'
 
 function Contacts() {
     const [name, setName] = useState("");
+    const [gender, setGender] = useState("");
+    const [contact, setContact] = useState("");
     const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    const [language, setLanguage] = useState("");
+    // const [message, setMessage] = useState("");
 
     const [loader, setLoader] = useState(false)
 
@@ -15,8 +18,10 @@ function Contacts() {
 
         db.collection('contacts').add({
             name: name,
+            gender: gender,
+            contact: contact,
             email: email,
-            message: message
+            // message: message
         })
         .then(() => {
             alert('Message has been submitted!')
@@ -29,39 +34,69 @@ function Contacts() {
 
     
         setName("");
+        setGender("");
+        setContact("");
         setEmail("");
-        setMessage("");
+        setLanguage("");
+        // setMessage("");
     }
 
     return (
         <form className="form" onSubmit={handleSubmit}>
-            <h1>Contact Form 📲</h1>
+            <h1>registration form<span>.</span></h1>
 
             <label>Name</label>
             <input 
             required
-            placeholder="Name"
+            placeholder=""
             value={name}
             onChange={(e) => setName(e.target.value)}
+            />
+
+            <label>Gender</label>
+            <input 
+            required
+            placeholder=""
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+            />
+
+            <label>Contact Number</label>
+            <input 
+            required
+            placeholder=""
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
             />
 
             <label>Email</label>
             <input 
             required
             type="email"
-            placeholder="Email"
+            placeholder=""
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             />
 
-            <label>Message</label>
+            <label>Language Spoken</label>
+            <input 
+            required
+            placeholder=""
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
+            />
+
+            
+           
+
+            {/* <label>Message</label>
             <textarea 
-            placeholder="Message"
+            placeholder=""
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            ></textarea>
+            ></textarea> */}
 
-            <button type="submit" style={{ background: loader ? '#acc' : 'rgb(2, 2, 110)' }}>Submit</button>
+            <button type="submit" style={{ background: loader ? '#acc' : 'rgb(147, 213, 0)', color: 'rgb(53, 52, 54)' }}>Submit</button>
         </form>
     )
 }
