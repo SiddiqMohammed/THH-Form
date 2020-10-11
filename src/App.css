@@ -153,8 +153,9 @@ textarea:focus {
   background-color: rgb(0, 0, 196);
 }
 
-@media (max-width: 576) {
+@media (max-width: 576px) {
   .app {
-    height: 150vh;
+    height: 250vh;
+    overflow: hidden;
   }
 }
