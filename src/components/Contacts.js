@@ -92,6 +92,7 @@ function Contacts() {
             <label>Contact Number</label>
             <input 
             required
+            type="number"
             placeholder=""
             value={contact}
             onChange={(e) => setContact(e.target.value)}
