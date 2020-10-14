@@ -1,19 +1,10 @@
 @font-face {
   font-family: 'Cocogoose';
   font-style: normal;
-  src: url('../src/font/Cocogoose\ Pro-trial.ttf');
+  src: url('../src/font/Cocogoose.otf');
   src: local('Cocogoose'), local('Cocogoose'),
-    url('../src/font/Cocogoose\ Pro-trial.ttf') format('truetype');
-  font-family: 'Cocogoose 1';
-  font-style: normal;
-  src: url('../src/font/Cocogoose\ Pro\ Thin-trial.ttf');
-  src: local('Cocogoose 1'), local('Cocogoose 1'),
-    url('../src/font/Cocogoose\ Pro\ Thin-trial.ttf') format('truetype');
-  font-family: 'Cocogoose 2';
-  font-style: normal;
-  src: url('../src/font/Cocogoose\ Pro\ Light-trial.ttf');
-  src: local('Cocogoose 1'), local('Cocogoose 1'),
-  url('../src/font/Cocogoose\ Pro\ Light-trial.ttf') format('truetype'),
+    url('../src/font//Cocogoose.otf') format('truetype');
+
 }
     
 * {
