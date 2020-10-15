@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import '../App.css'
 import { db } from '../firebase'
+// import SnapshotFirebaseAdvanced from './ServiceFirebase'
 
 function Contacts() {
     const [name, setName] = useState("");
@@ -23,7 +24,6 @@ function Contacts() {
 
         db.collection('contacts').add({
             name: name,
-            // gender: gender,
             contact: contact,
             email: email,
             language: language,
@@ -32,7 +32,6 @@ function Contacts() {
             isFemale: isFemale,
             isInterested: isInterested,
             isNot: isNot,
-            // message: message
         })
         .then(() => {
             alert('Message has been submitted!')
@@ -58,6 +57,8 @@ function Contacts() {
     }
 
     return (
+        <div>
+            {/* <SnapshotFirebaseAdvanced /> */}
         <form className="form" onSubmit={handleSubmit}>
             <h1>registration form<span>.</span></h1>
 
@@ -108,6 +109,7 @@ function Contacts() {
             required
             value={emirates} 
             onChange={(e) => setEmirates(e.target.value)}>
+                <option value="">Please Select</option>
                 <option value="Abu Dhabi">Abu Dhabi</option>
                 <option value="Ajman">Ajman</option>
                 <option value="Dubai">Dubai</option>
@@ -162,6 +164,7 @@ function Contacts() {
 
             <button type="submit" style={{ background: loader ? '#acc' : 'rgb(147, 213, 0)', color: 'rgb(53, 52, 54)' }}>Submit</button>
         </form>
+        </div>
     )
 }
 
