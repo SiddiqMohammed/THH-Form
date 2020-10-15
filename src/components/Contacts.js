@@ -8,12 +8,9 @@ function Contacts() {
     // const [gender, setGender] = useState("");
     const [contact, setContact] = useState("");
     const [email, setEmail] = useState("");
-    const [language, setLanguage] = useState("");
-    const [emirates, setEmirates] = useState("");
-    const [isMale, setIsMale] = useState("")
-    const [isFemale, setIsFemale] = useState("")
-    const [isInterested, setIsInterested] = useState("")
-    const [isNot, setIsNot] = useState("")
+    const [currsalary, setCurrSalary] = useState("");
+    const [exsalary, setExSalary] = useState("");
+    const [notice, setNotice] = useState("");
     // const [message, setMessage] = useState("");
 
     const [loader, setLoader] = useState(false)
@@ -22,16 +19,13 @@ function Contacts() {
         e.preventDefault();
         setLoader(true)
 
-        db.collection('contacts').add({
+        db.collection('hiring').add({
             name: name,
             contact: contact,
             email: email,
-            language: language,
-            emirates: emirates,
-            isMale: isMale,
-            isFemale: isFemale,
-            isInterested: isInterested,
-            isNot: isNot,
+            notice: notice,
+            currsalary: currsalary,
+            exsalary: exsalary,
         })
         .then(() => {
             alert('Message has been submitted!')
@@ -47,12 +41,9 @@ function Contacts() {
         // setGender("");
         setContact("");
         setEmail("");
-        setLanguage("");
-        setEmirates("");
-        setIsMale("");
-        setIsFemale("");
-        setIsInterested("");
-        setIsNot("");
+        setCurrSalary("");
+        setExSalary("");
+        setNotice("");
         // setMessage("");
     }
 
@@ -60,7 +51,7 @@ function Contacts() {
         <div>
             {/* <SnapshotFirebaseAdvanced /> */}
         <form className="form" onSubmit={handleSubmit}>
-            <h1>registration form<span>.</span></h1>
+            <h1>hiring form<span>.</span></h1>
 
             <label>Name</label>
             <input 
@@ -96,48 +87,31 @@ function Contacts() {
             onChange={(e) => setEmail(e.target.value)}
             />
 
-            <label>Language Spoken</label>
+            <label>Current Salary</label>
             <input 
             required
             placeholder=""
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
+            value={currsalary}
+            onChange={(e) => setCurrSalary(e.target.value)}
             />
 
-            <label>Emirates</label>
-            <select 
+            <label>Expected Salary</label>
+            <input 
             required
-            value={emirates} 
-            onChange={(e) => setEmirates(e.target.value)}>
-                <option value="">Please Select</option>
-                <option value="Abu Dhabi">Abu Dhabi</option>
-                <option value="Ajman">Ajman</option>
-                <option value="Dubai">Dubai</option>
-                <option value="Fujairah">Fujairah</option>
-                <option value="Ras Alkhaimah">Ras Al-Khaimah</option>
-                <option value="Sharjah">Sharjah</option>
-                <option value="Umm Al Quwain">Umm Al-Quwain</option>
-            </select>
+            placeholder=""
+            value={exsalary}
+            onChange={(e) => setExSalary(e.target.value)}
+            />
 
-            <label>Gender</label>
-            <label>
+            <label>Notice Period</label>
             <input 
-            type="radio"
-            value="Male"
-            style={{ marginRight: '10px' }}
-            checked={isMale}
-            onChange={(e) => {setIsMale(e.target.value); setIsFemale("")}} />
-            Male</label>
-            <label>
-            <input 
-            type="radio"
-            value="Female"
-            style={{ marginBottom: '30px', marginRight: '10px' }}
-            checked={isFemale}
-            onChange={(e) => {setIsFemale(e.target.value); setIsMale("")}} />
-            Female</label>
+            required
+            placeholder=""
+            value={notice}
+            onChange={(e) => setNotice(e.target.value)}
+            />
 
-            <label>Are you interested in Part-Time Promoter and Event Roles?</label>
+            {/* <label>Are you interested in Part-Time Promoter and Event Roles?</label>
             <label>
             <input 
             type="radio"
@@ -153,7 +127,7 @@ function Contacts() {
             style={{ marginBottom: '30px', marginRight: '10px' }}
             checked={isNot}
             onChange={(e) => {setIsNot(e.target.value); setIsInterested("")}} />
-            No</label>
+            No</label> */}
 
             {/* <label>Message</label>
             <textarea 

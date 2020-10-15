@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="app">
       <Router>
-        <Route path="/register" component={Contact} />
-        <Route path="/hiring" component={Register} />
+        <Route path="/hiring" component={Contact} />
+        <Route path="/register" component={Register} />
         <Route path="/list" component={Service} />
       </Router>
     </div>

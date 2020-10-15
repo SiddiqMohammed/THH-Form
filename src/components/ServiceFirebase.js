@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {firebaseApp} from '../firebase';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,14 +20,9 @@ const getSchools = () => {
     });
 }
 getSchools();
-function SnapshotFirebaseAdvanced() {
+function SnapshotFirebaseAdvanced () {
 
-
-
-//   useEffect(() => {
-    // getSchools();
-//   }, []);
-
+  
 
   return (
     <div className="MainDiv">
@@ -50,17 +45,7 @@ function SnapshotFirebaseAdvanced() {
             </thead>
             <tbody>
 
-            {/* {items.map((item) => (
-        <div className="school" key={school.id}>
-          <h2>{school.title}</h2>
-          <p>{school.desc}</p>
-          <p>{school.score}</p>
-          <p>{school.ownerEmail}</p>
-          
-        </div>
-      ))} */}
-{/* 
-            {items.map(data => {
+            {/* {this.state.items.map(data => {
                 
                 return (
                     <tr>     
@@ -71,12 +56,14 @@ function SnapshotFirebaseAdvanced() {
                     <td>{data.language}</td>
                     <td>{data.emirates}</td>
                     <td>{data.isInterested}</td>
+
                     </tr>
                     
                 );
                
-                })} */}
-        
+            })} */}
+               
+
                
             </tbody>
             
