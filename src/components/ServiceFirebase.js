@@ -4,25 +4,48 @@ import {firebaseApp} from '../firebase';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Contacts from './Contacts';
 
-const ref = firebaseApp.firestore().collection('contacts');
+// const ref = firebaseApp.firestore().collection('contacts');
 
-const getSchools = () => {
-  console.log('clyde')
-  ref
+// const getSchools = () => {
+//   console.log('clyde')
+//   ref
 
-    .onSnapshot((querySnapshot) => {
-      const items = [];
-      querySnapshot.forEach((doc) => {
-        items.push(doc.data());
-        console.log(doc.data())
-      });
+//     .onSnapshot((querySnapshot) => {
+//       const items = [];
+//       querySnapshot.forEach((doc) => {
+//         items.push(doc.data());
+//         console.log(doc.data())
+//       });
       
-    });
+//     });
+// }
+// getSchools();
+
+function UseTimes() {
+  const [times, setTimes] = useState([])
+
+  useEffect(() => {
+    firebaseApp
+      .firestore()
+      .collection('register')
+      .onSnapshot((snapshot) => {
+        const newTimes = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+
+        setTimes(newTimes)
+      })
+  }, [])
+
+  return times
+    
 }
-getSchools();
+
+
 function SnapshotFirebaseAdvanced () {
 
-  
+  const times = UseTimes()
 
   return (
     <div className="MainDiv">
@@ -44,7 +67,18 @@ function SnapshotFirebaseAdvanced () {
                 </tr>
             </thead>
             <tbody>
+            {times.map((time) => 
+              <tr key={time.id}>     
+              <td>{time.name}</td>
+              <td>{time.email}</td>
+              <td>{time.contact}</td>
+              <td>{time.isMale}</td>
+              <td>{time.language}</td>
+              <td>{time.emirates}</td>
+              <td>{time.isInterested}</td>
 
+              </tr>
+            )}
             {/* {this.state.items.map(data => {
                 
                 return (

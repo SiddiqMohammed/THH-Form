@@ -147,6 +147,10 @@ textarea:focus {
   background-color: rgb(0, 0, 196);
 }
 
+tr td {
+  color: white;
+}
+
 @media (max-width: 576px) {
   .app {
     height: 250vh;
