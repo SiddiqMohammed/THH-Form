@@ -90,6 +90,7 @@ function Contacts() {
             <label>Current Salary</label>
             <input 
             required
+            type="number"
             placeholder=""
             value={currsalary}
             onChange={(e) => setCurrSalary(e.target.value)}
@@ -98,6 +99,7 @@ function Contacts() {
             <label>Expected Salary</label>
             <input 
             required
+            type="number"
             placeholder=""
             value={exsalary}
             onChange={(e) => setExSalary(e.target.value)}

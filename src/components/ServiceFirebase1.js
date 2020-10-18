@@ -10,7 +10,7 @@ function UseTimes() {
   useEffect(() => {
     firebaseApp
       .firestore()
-      .collection('register')
+      .collection('hiring')
       .onSnapshot((snapshot) => {
         const newTimes = snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -26,14 +26,14 @@ function UseTimes() {
 }
 
 
-function SnapshotFirebaseAdvanced () {
+function SnapshotFirebaseAdvanced1 () {
 
   const times = UseTimes()
 
   return (
     <div className="MainDiv">
       <div className="jumbotron text-center bg-sky">
-          <h3>Registered List</h3>
+          <h3>Registered Applicants</h3>
       </div>
     
       <div className="container">
@@ -43,11 +43,9 @@ function SnapshotFirebaseAdvanced () {
                     <th>Name</th>
                     <th>Email</th>
                     <th>Contact Number</th>
-                    <th>Male</th>
-                    <th>Female</th>
-                    <th>Language</th>
-                    <th>Emirates</th>
-                    <th>Interested</th>
+                    <th>Current Salary</th>
+                    <th>Expected Salary</th>
+                    <th>Notice Period</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,11 +54,9 @@ function SnapshotFirebaseAdvanced () {
               <td>{time.name}</td>
               <td>{time.email}</td>
               <td>{time.contact}</td>
-              <td>{time.isMale}</td>
-              <td>{time.isFemale}</td>
-              <td>{time.language}</td>
-              <td>{time.emirates}</td>
-              <td>{time.isInterested}</td>
+              <td>{time.currsalary}</td>
+              <td>{time.exsalary}</td>
+              <td>{time.notice}</td>
 
               </tr>
             )}
@@ -95,4 +91,4 @@ function SnapshotFirebaseAdvanced () {
   );
 }
 
-export default SnapshotFirebaseAdvanced;
+export default SnapshotFirebaseAdvanced1;
