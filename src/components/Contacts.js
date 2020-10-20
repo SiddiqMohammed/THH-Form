@@ -105,13 +105,24 @@ function Contacts() {
             onChange={(e) => setExSalary(e.target.value)}
             />
 
-            <label>Notice Period</label>
+            {/* <label>Notice Period</label>
             <input 
             required
             placeholder=""
             value={notice}
             onChange={(e) => setNotice(e.target.value)}
-            />
+            /> */}
+
+            <label>Notice Period</label>
+            <select 
+            required
+            value={notice} 
+            onChange={(e) => setNotice(e.target.value)}>
+                <option value="">Please Select</option>
+                <option value="15 Days">15 Days</option>
+                <option value="1 Month">1 Month</option>
+                <option value="3 Months">3 Months</option>
+            </select>
 
             {/* <label>Are you interested in Part-Time Promoter and Event Roles?</label>
             <label>

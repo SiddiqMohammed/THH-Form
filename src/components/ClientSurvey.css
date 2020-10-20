@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'Cocogoose';
+    font-style: normal;
+    src: url('../font/Cocogoose.otf');
+    src: local('Cocogoose'), local('Cocogoose'),
+      url('../font/Cocogoose.otf') format('truetype');
+  
+  }
+      
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: rgb(53, 52, 54);
+  }
+  
+  
+  input,
+  textarea {
+    font-family: "Cocogoose 1", sans-serif;
+  }
+  
+  .app {
+    background-color: rgb(53, 52, 54);
+    background-image: url('../bg.png');
+    background-size: 100%;
+    width: 900px;
+    margin: 0 auto;
+    height: 190vh;
+    border-radius: 3px;
+  }
+  
+  /* Contact.js */
+  .form {
+    /* background-image: url('./bg.png');
+    background-size: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 43rem;
+    margin-left: 6.5rem;
+  }
+  
+  
+  
+  .form > h1 {
+    font-family: "Cocogoose", sans-serif;
+    color: white;
+    margin-bottom: 32px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 100;
+    margin-top: 53px;
+  }
+  .form h1 span {
+    color:  rgb(147, 213, 0);
+  }
+  
+  .form > input {
+    font-family: 'Montserrat', sans-serif;
+    padding: 11px;
+    border-radius: 3px;
+    /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.137); */
+    margin-bottom: 30px;
+    border: 1px solid lightgray;
+    /* border: none; */
+    background: #fff;
+    font-size: 15px;
+    color: rgb(0, 0, 32);
+    outline: none;
+    border-radius: 5px;
+    height: 1.2rem;
+  }
+  
+  .form > select {
+    font-family: 'Montserrat', sans-serif;
+    padding: 2px;
+    border-radius: 3px;
+    /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.137); */
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+    /* border: none; */
+    background: #fff;
+    font-size: 16px;
+    color: rgb(0, 0, 32);
+    outline: none;
+    border-radius: 5px;
+    height: 2rem;
+  }
+  
+  .form > input:focus {
+    border: 1px solid rgb(0, 0, 196);
+  }
+  
+  .form > textarea {
+    height: 0px;
+    max-width: 100%;
+    min-height: 100px;
+}
+  
+  .form > label {
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 4px;
+    color: white;
+    font-weight: inherit;
+    font-size: 17px;
+  }
+  
+  .form > button {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(53, 52, 54);
+    padding: 20px;
+    border: none;
+    background-color: rgb(147, 213, 0);
+    font-weight: 600;
+    font-size: 37px;
+    border-radius: 11px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    margin-top: 45px;
+    width: 94%;
+    margin-left: 23px;
+    height: 80px;
+  }
+  
+  .form > button:hover {
+    background-color: rgb(0, 0, 196);
+  }
+  
+  tr td {
+    color: white;
+  }
+  
+  @media (max-width: 576px) {
+    .app {
+      height: 250vh;
+      overflow: hidden;
+    }
+  }
