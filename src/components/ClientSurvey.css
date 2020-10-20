@@ -44,7 +44,10 @@
     margin-left: 6.5rem;
   }
   
-  
+  .form img {
+    width: 65%;
+    margin: auto;
+}
   
   .form > h1 {
     font-family: "Cocogoose", sans-serif;

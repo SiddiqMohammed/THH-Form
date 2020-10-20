@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import './ClientSurvey.css'
 import { db } from '../firebase'
+import Logo from '../../src/logo.png'
 
 function ClientSurvey() {
+    const [hear, setHear] = useState("");
     const [collab, setCollab] = useState("");
     const [rate, setRate] = useState("");
     const [handle, setHandle] = useState("");
@@ -31,6 +33,7 @@ function ClientSurvey() {
         setLoader(true)
 
         db.collection('clientsurvey').add({
+            hear: hear,
             collab: collab,
             rate: rate,
             handle: handle,
@@ -50,7 +53,8 @@ function ClientSurvey() {
             setLoader(false)
         })
 
-    
+        
+        setHear("");
         setCollab("");
         setRate("");
         setHandle("");
@@ -60,11 +64,14 @@ function ClientSurvey() {
         setSatisfied("");
         setMessage1("");
         setMessage2("");
+        // setIsInterested("");
+        // setIsNot("");
     }
 
     return (
         <div>
         <form className="form" onSubmit={handleSubmit}>
+            <img src={Logo} alt="logo" />
             <h1>client survey form<span>.</span></h1>
 
             {/* <label>1. How did you find out about The Hanging House/ Where did you first hear about us?</label>
@@ -108,6 +115,40 @@ function ClientSurvey() {
             checked={isFemale}
             onChange={(e) => {setIsFemale(e.target.value); setIsMale("")}} />
             Emails</label> */}
+{/* 
+            <label>Are you interested in Part-Time Promoter and Event Roles?</label>
+            <label>
+            <input 
+            type="radio"
+            value="Yes"
+            style={{ marginRight: '10px' }}
+            checked={isInterested}
+            onChange={(e) => {setIsInterested(e.target.value); setIsNot("")}} />
+            Yes, I'm Interested</label>
+            <label>
+            <input 
+            type="radio"
+            value="No"
+            style={{ marginBottom: '30px', marginRight: '10px' }}
+            checked={isNot}
+            onChange={(e) => {setIsNot(e.target.value); setIsInterested("")}} />
+            No</label>
+            <label>
+            <input 
+            type="radio"
+            value="Yes"
+            style={{ marginRight: '10px' }}
+            checked={isInterested}
+            onChange={(e) => {setIsInterested(e.target.value); setIsNot("")}} />
+            Yes, I'm Interested</label>
+            <label>
+            <input 
+            type="radio"
+            value="No"
+            style={{ marginBottom: '30px', marginRight: '10px' }}
+            checked={isNot}
+            onChange={(e) => {setIsNot(e.target.value); setIsInterested("")}} />
+            No</label> */}
             
 
             {/* <label>Gender</label>
@@ -117,6 +158,19 @@ function ClientSurvey() {
             value={gender}
             onChange={(e) => setGender(e.target.value)}
             /> */}
+
+<label>1. How did you find out about The Hanging House/ Where did you first hear about us?</label>
+            <select 
+            required
+            value={hear} 
+            onChange={(e) => setHear(e.target.value)}>
+                <option value="">Please Select...</option>
+                <option value="Company Website">Company Website</option>
+                <option value="Google ads/search">Google ads/search</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Word of mouth">Word of mouth</option>
+                <option value="Emails">Emails</option>
+            </select>
 
             <label>2. How long have you been collaborating with The Hanging House?</label>
             <select 
@@ -129,6 +183,13 @@ function ClientSurvey() {
                 <option value="7-12 months">7-12 months</option>
                 <option value="Over a year">Over a year</option>
             </select>
+
+            {/* <fieldset>
+                <legend>Payment Method</legend>
+                <input type="radio" name="payment_method" value="bill"/><label>Bill Me</label>
+                <input type="radio" name="payment_method" value="credit" checked="checked"/><label>Credit Card</label>
+                <input type="radio" name="payment_method" value="paypal"/><label>Paypal</label>
+            </fieldset> */}
 
             <label>3. Overall, how would you rate the activation?</label>
             <select 
